@@ -1,3 +1,4 @@
+// Import Dependencies
 import { useState } from "react";
 
 export const useLocalStorage = (key, initialVal) => {
