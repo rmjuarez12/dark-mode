@@ -120,7 +120,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: '';
+  content: "";
   content: none;
 }
 table {
@@ -136,7 +136,7 @@ table {
 
 html {
   font-size: 62.5%;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 500;
 }
 
@@ -165,6 +165,8 @@ img {
   font-family: sans-serif;
   text-align: center;
   width: 100%;
+  min-height: 100vh;
+  transition: 0.3s all;
 }
 
 .navbar {
@@ -178,6 +180,33 @@ img {
   -webkit-box-shadow: 0px 2px 15px -8px rgba(0, 0, 0, 0.42);
   -moz-box-shadow: 0px 2px 15px -8px rgba(0, 0, 0, 0.42);
   box-shadow: 0px 2px 15px -8px rgba(0, 0, 0, 0.42);
+}
+
+.logo a {
+  text-decoration: none;
+  color: #f0932b;
+}
+
+.navbar nav {
+  display: flex;
+  height: 70px;
+  align-items: center;
+}
+
+.navbar nav a {
+  text-decoration: none;
+  font-size: 16px;
+  margin: 0 10px;
+  padding: 10px;
+  color: black;
+  transition: 0.3s all;
+  display: block;
+}
+
+.navbar nav a.active,
+.navbar nav a:hover {
+  background: #be2edd;
+  color: white;
 }
 
 .dark-mode__toggle {
@@ -229,8 +258,8 @@ img {
 .coin__title {
   display: block;
   margin-left: 8px;
-    min-width: 160px;
-text-align: left;
+  min-width: 160px;
+  text-align: left;
 }
 
 .coin__symbol {
@@ -244,10 +273,14 @@ text-align: left;
 
 .dark-mode {
   color: #fff;
-  background-color: #313843;
+  background-color: #30336b;
 
   .navbar {
-    background-color: #1F2022;
+    background-color: #130f40;
     border: none;
+  }
+
+  .navbar nav a {
+    color: white;
   }
 }

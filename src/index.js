@@ -2,10 +2,12 @@
 import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import axios from "axios";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 // Import Components
 import Charts from "./components/Charts";
 import Navbar from "./components/Navbar";
+import HomePage from "./components/HomePage";
 
 // Import Hooks
 import { useDarkMode } from "./hooks/useDarkMode";
@@ -26,10 +28,21 @@ const App = () => {
       .catch((err) => console.log(err));
   }, []);
   return (
-    <div className={darkMode ? "dark-mode App" : "App"}>
-      <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
-      <Charts coinData={coinData} />
-    </div>
+    <Router>
+      <div className={darkMode ? "dark-mode App" : "App"}>
+        <Navbar
+          darkMode={darkMode}
+          coinData={coinData}
+          setDarkMode={setDarkMode}
+        />
+
+        <Route path='/' exact>
+          <HomePage />
+        </Route>
+
+        <Charts coinData={coinData} darkMode={darkMode} />
+      </div>
+    </Router>
   );
 };
 
